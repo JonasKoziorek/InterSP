@@ -21,13 +21,11 @@ fig = go.Figure(
     layout=go.Layout(
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
-        xaxis={
-            "range" : (-6, 6)
-        }
     ),
-    )
-fig.update_xaxes(range=[-6, 6])
+)
+fig.update_yaxes(range=[-6, 6])
 
+# plot = dash.dcc.Graph(figure=fig, id="harmonic", animate=True)
 plot = dash.dcc.Graph(figure=fig, id="harmonic")
 
 layout = dash.html.Div(
@@ -50,23 +48,62 @@ layout = dash.html.Div(
             mathjax=True
         ),
         plot,
-        dash.dcc.Slider(-5, 5, 0.01,
-                value=1,
-                id='A-slider'
+        dbc.Row(
+            [
+                dbc.Col(dash.dcc.Markdown("$A$:", mathjax=True), lg=1),
+                dbc.Col(
+                    dash.dcc.Slider(-5, 5, marks=None,
+                            value=1,
+                            id='A-slider'
+                    ),
+                    lg=11
+                )
+            ]
+        ),
+        dbc.Row(
+            [
+                dbc.Col(dash.dcc.Markdown("$\\omega$:", mathjax=True), lg=1),
+                dbc.Col(
+                    dash.dcc.Slider(-3, 3, marks=None,
+                            value=1,
+                            id='omega-slider'
+                    ),
+                    lg=11
+                )
+            ]
+        ),
+        dbc.Row(
+            [
+                dbc.Col(dash.dcc.Markdown("$\\phi$:", mathjax=True), lg=1),
+                dbc.Col(
+                    dash.dcc.Slider(-np.pi, np.pi, marks=None,
+                            value=0,
+                            id='phi-slider'
+                    ),
+                    lg=11
+                )
+            ]
+        ),
+        dbc.Row(
+            [
+                dbc.Col(dash.dcc.Markdown("$D$:", mathjax=True), lg=1),
+                dbc.Col(
+                    dash.dcc.Slider(-3, 3, marks=None,
+                            value=0,
+                            id='D-slider'
+                    ),
+                    lg=11
+                )
+            ]
         ),
     ]
 )
 
-fig = go.Figure(
-    data=[go.Scatter(x=x, y=y)],
-    layout=go.Layout(
-            paper_bgcolor='rgba(0,0,0,0)',
-            plot_bgcolor='rgba(0,0,0,0)'
-        )
-    )
 @dash.callback(
-    dash.Output('harmonic', 'figure'),
-    dash.Input('A-slider', 'value'))
+    dash.Output('harmonic', 'figure', allow_duplicate=True),
+    dash.Input('A-slider', 'value'),
+    prevent_initial_call=True
+    )
 def update_output(value):
     global A, omega, phi, D, x
     A = value
@@ -77,4 +114,59 @@ def update_output(value):
                 plot_bgcolor='rgba(0,0,0,0)'
             )
         )
+    fig.update_yaxes(range=[-A-1, A+1])
+    return fig
+
+@dash.callback(
+    dash.Output('harmonic', 'figure', allow_duplicate=True),
+    dash.Input('omega-slider', 'value'),
+    prevent_initial_call=True
+    )
+def update_output(value):
+    global A, omega, phi, D, x
+    omega = value
+    fig = go.Figure(
+        data=[go.Scatter(x=x, y=harmonic(x, A, omega, phi, D))],
+        layout=go.Layout(
+                paper_bgcolor='rgba(0,0,0,0)',
+                plot_bgcolor='rgba(0,0,0,0)'
+            )
+        )
+    fig.update_yaxes(range=[-A-1, A+1])
+    return fig
+
+@dash.callback(
+    dash.Output('harmonic', 'figure', allow_duplicate=True),
+    dash.Input('phi-slider', 'value'),
+    prevent_initial_call=True
+    )
+def update_output(value):
+    global A, omega, phi, D, x
+    phi = value
+    fig = go.Figure(
+        data=[go.Scatter(x=x, y=harmonic(x, A, omega, phi, D))],
+        layout=go.Layout(
+                paper_bgcolor='rgba(0,0,0,0)',
+                plot_bgcolor='rgba(0,0,0,0)'
+            )
+        )
+    fig.update_yaxes(range=[-A-1, A+1])
+    return fig
+
+@dash.callback(
+    dash.Output('harmonic', 'figure', allow_duplicate=True),
+    dash.Input('D-slider', 'value'),
+    prevent_initial_call=True
+    )
+def update_output(value):
+    global A, omega, phi, D, x
+    D = value
+    fig = go.Figure(
+        data=[go.Scatter(x=x, y=harmonic(x, A, omega, phi, D))],
+        layout=go.Layout(
+                paper_bgcolor='rgba(0,0,0,0)',
+                plot_bgcolor='rgba(0,0,0,0)'
+            )
+        )
+    fig.update_yaxes(range=[-A-1, A+1])
     return fig

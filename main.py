@@ -38,7 +38,12 @@ navbar = dbc.NavbarSimple(
     dark=True,
 )
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.FLATLY], use_pages=True)
+app = dash.Dash(__name__, 
+                prevent_initial_callbacks="initial_duplicate",
+                suppress_callback_exceptions = True,
+                external_stylesheets=[dbc.themes.FLATLY], 
+                use_pages=True, 
+                )
 app.title = "InterSP"
 
 app.layout = dash.html.Div([
