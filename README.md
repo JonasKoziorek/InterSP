@@ -20,7 +20,7 @@ If we decide to use Mittweida servers instead of our own computers, we can use t
 # Discussion
 
 ## Architecture
-If we are going to make this app scalable, we need to decide on one architecture to use: Here is a small Medium article on Architecture with dash. 
+If we are going to make this app scalable, we need to decide on one architecture to use: Here is a small Medium article on Architecture with dash.   
 [https://towardsdatascience.com/clean-architecture-for-ai-ml-applications-using-dash-and-plotly-with-docker-42a3eeba6233]
 
 #### Services
