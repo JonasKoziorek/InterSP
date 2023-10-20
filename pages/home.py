@@ -1,7 +1,8 @@
+from dash import register_page
 import dash
 import dash_bootstrap_components as dbc
 
-dash.register_page(__name__, path="/")
+register_page(__name__, path="/")
 
 layout = [
         dash.html.H1("Interactive Signal Procesing", className="display-3"),
@@ -15,5 +16,8 @@ layout = [
         ),
         dash.html.P(
             dbc.Button("First lesson", color="primary", href="/lesson1"), className="lead"
+        ),
+        dash.html.P(
+            dbc.Button("Second lesson", color="primary", href="/lesson2"), className="lead"
         ),
     ]

@@ -1,10 +1,11 @@
 import dash
+from dash import register_page
 import dash_bootstrap_components as dbc
 import dash_latex as dl
 import numpy as np
 import plotly.graph_objs as go
 
-dash.register_page(__name__, "/lesson1")
+register_page(__name__, "/lesson1")
 
 A = 1
 omega = 1

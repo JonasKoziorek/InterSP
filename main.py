@@ -1,8 +1,6 @@
 import dash
 import dash_bootstrap_components as dbc
 
-import dash_bootstrap_components as dbc
-
 def fluid_layout(contents):
     jumbotron = dash.html.Div(
         dbc.Container(
@@ -16,8 +14,6 @@ def fluid_layout(contents):
         }
     )
     return jumbotron
-
-        
 
 navbar = dbc.NavbarSimple(
     children=[
@@ -44,6 +40,7 @@ app = dash.Dash(__name__,
                 external_stylesheets=[dbc.themes.FLATLY], 
                 use_pages=True, 
                 )
+
 app.title = "InterSP"
 
 app.layout = dash.html.Div([
