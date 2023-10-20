@@ -4,7 +4,7 @@ Interactive Signal Processing
 # Some Cool Links: 
 
 ## Unit and Integration tests: 
-[Unit and Integration tests with Dash](https://dash.plotly.com/testing) ->  As far as I understand, this library is only used for UI-Tests (tests that are triggered by the press of a button or so), which brings the question: Do we need some separated package for Unit-Testing?
+[Unit and Integration tests with Dash](https://dash.plotly.com/testing)
 
 ## CI/CD
 [Cool Youtube Playlist about Automated CI/CD with GitHub actions](https://www.youtube.com/playlist?list=PLArH6NjfKsUhvGHrpag7SuPumMzQRhUKY) - Videos are very long but content is really complete with many practical examples. 
@@ -21,7 +21,7 @@ If we decide to use Mittweida servers instead of our own computers, we can use t
 
 ## Architecture
 If we are going to make this app scalable, we need to decide on one architecture to use: Here is a small Medium article on Architecture with dash.     
-[https://towardsdatascience.com/clean-architecture-for-ai-ml-applications-using-dash-and-plotly-with-docker-42a3eeba6233]  
+[Clean Architecture for AI ML applications using dash and plotly with docker](https://towardsdatascience.com/clean-architecture-for-ai-ml-applications-using-dash-and-plotly-with-docker-42a3eeba6233)
 
 #### Services
 
