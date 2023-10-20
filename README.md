@@ -26,4 +26,9 @@ If we are going to make this app scalable, we need to decide on one architecture
 ## Docker
 Maybe it would make sense to put all code inside a Docker Container, since we are planning to move the code to University Servers at some point. Docker Compose makes the migration almost effortless. 
 
+## Branches
+- We are only two persons, but maybe it would still make sense to setup review process in GitHub, so we must review code from each other before merging. We could learn a lot from each other this way :).
+- We need to define some general rules for our branches. It is usually bad practice to have huge branches because it is a pain in the ass to solve merge conflicts.
+- We should also block main branch, to avoid bad code there. The process should be always working on a feature branch and let the pipeline do it's magic and see if it is possible to merge it in main.
 
+# I love you, Dear <3
