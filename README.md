@@ -13,9 +13,9 @@ Interactive Signal Processing
 [PyLint](https://pypi.org/project/pylint/) - Lint is a tool that checks code Styling such as Identation, Line length, File Length and so on.
 
 ## HSMW 
-If we decide to use Mittweida servers instead of our own computers, we can use those tutorials to set them up. I never used it so I am not sure about capabilities and Limitations
-[Website SetUp](https://wiki.hs-mittweida.de/de/Eigene_Webseite)
-[Data Base SetUp](https://wiki.hs-mittweida.de/de/Eigene_Datenbank)
+If we decide to use Mittweida servers instead of our own computers, we can use those tutorials to set them up. I never used it so I am not sure about capabilities and Limitations  
+[Website SetUp](https://wiki.hs-mittweida.de/de/Eigene_Webseite)  
+[Data Base SetUp](https://wiki.hs-mittweida.de/de/Eigene_Datenbank)  
 
 # Discussion
 
