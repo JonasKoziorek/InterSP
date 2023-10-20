@@ -4,7 +4,7 @@ Interactive Signal Processing
 # Some Cool Links: 
 
 ## Unit and Integration tests: 
-[Unit and Integration tests with Dash](https://dash.plotly.com/testing)
+[Unit and Integration tests with Dash](https://dash.plotly.com/testing) ->  As far as I understand, this library is only used for UI-Tests (tests that are triggered by the press of a button or so), which brings the question: Do we need some separated package for Unit-Testing?
 
 ## CI/CD
 [Cool Youtube Playlist about Automated CI/CD with GitHub actions](https://www.youtube.com/playlist?list=PLArH6NjfKsUhvGHrpag7SuPumMzQRhUKY) - Videos are very long but content is really complete with many practical examples. 
