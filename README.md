@@ -20,8 +20,25 @@ If we decide to use Mittweida servers instead of our own computers, we can use t
 # Discussion
 
 ## Architecture
-If we are going to make this app scalable, we need to decide on one architecture to use: Here is a small Medium article on Architecture with dash.I would recomend MVC for the UI since it is quite simple.
+If we are going to make this app scalable, we need to decide on one architecture to use: Here is a small Medium article on Architecture with dash. 
 [https://towardsdatascience.com/clean-architecture-for-ai-ml-applications-using-dash-and-plotly-with-docker-42a3eeba6233]
+
+#### Services
+
+#### UI
+I would recomend MVC for the UI since it is quite simple.
+
+#### Code Structure
+
+##### Enums / Structs with static variables 
+Honestly, I don't know if it is a thing in python, but basically what I mean is that we can access those variables without having to make an instance of this class. Global Variables or Singletons could also be used.
+I am trying to order these points by importance
+
+| File   |      Reasoning      |
+|----------|:-------------:|
+| routes | For type safety and also better to have an overview of all routes used in the app. Could be in root folder and each subfolder be a different route. TBD |
+| Strings | Think About Localization |
+| Styling | Think about using university colors and logos |
 
 ## Docker
 Maybe it would make sense to put all code inside a Docker Container, since we are planning to move the code to University Servers at some point. Docker Compose makes the migration almost effortless. 
